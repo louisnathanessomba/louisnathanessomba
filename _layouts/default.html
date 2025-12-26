@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body data-section="{% if page.layout == 'thesis' %}foundations{% elsif page.layout == 'project' %}applied{% elsif page.layout == 'research' %}exploring{% elsif page.layout == 'essay' %}ethics{% elsif page.layout == 'tip' or page.layout == 'opinion' %}everyday{% elsif page.url contains '/About-Me/' %}about{% endif %}">
+  <header>
+    <nav>
+      <a href="{{ "/Home/" | relative_url }}" {% if page.url == '/Home/' %}class="active"{% endif %}>Home</a>
+      <a href="{{ "/Foundations/" | relative_url }}" {% if page.url contains '/Foundations/' %}class="active"{% endif %}>Foundations</a>
+      <a href="{{ "/Applied-Works/" | relative_url }}" {% if page.url contains '/Applied-Works/' %}class="active"{% endif %}>Applied Works</a>
+      <a href="{{ "/Exploring-Frontiers/" | relative_url }}" {% if page.url contains '/Exploring-Frontiers/' %}class="active"{% endif %}>Exploring Frontiers</a>
+      <a href="{{ "/Ethics-&-Ecology/" | relative_url }}" {% if page.url contains '/Ethics-&-Ecology/' %}class="active"{% endif %}>Ethics & Ecology</a>
+      <a href="{{ "/Everyday-Insights/" | relative_url }}" {% if page.url contains '/Everyday-Insights/' %}class="active"{% endif %}>Everyday Insights</a>
+      <a href="{{ "/About-Me/" | relative_url }}" {% if page.url contains '/About-Me/' %}class="active"{% endif %}>About Me</a>
+      <a href="{{ "/Sources/" | relative_url }}" {% if page.url contains '/Sources/' %}class="active"{% endif %}>Sources</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer>
+    <p>© {{ site.time | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+  </footer>
+</body>
+</html>
