@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<div class="container fade-in" data-section="ethics">
+  <article class="essay-post">
+    <header class="essay-header">
+      <h1>{{ page.title }}</h1>
+      <div class="essay-meta">
+        <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+        {% if page.tags %}
+        <div class="tags mt-2">
+          🏷️ {{ page.tags | join: ", " }}
+        </div>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="essay-content">
+      {{ content }}
+
+      <!-- Related Projects -->
+      {% if page.related_project %}
+      <div class="related-content mt-3">
+        <h3>Related Project</h3>
+        <p>
+          🔗 <a href="{{ page.related_project | relative_url }}">
+            {{ page.related_project_title }}
+          </a>
+        </p>
+      </div>
+      {% endif %}
+
+      <!-- Further Reading -->
+      {% if page.further_reading %}
+      <div class="further-reading mt-3">
+        <h3>Further Reading</h3>
+        <ul>
+          {% for item in page.further_reading %}
+          <li>
+            <a href="{{ item.url }}" target="_blank" rel="noopener">
+              {{ item.title }}
+            </a>
+            {% if item.description %}
+            <p>{{ item.description }}</p>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Navigation -->
+    <div class="post-navigation mt-4">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}" class="prev-post">
+        ← Previous: {{ page.previous.title }}
+      </a>
+      {% endif %}
+      {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}" class="next-post">
+        Next: {{ page.next.title }} →
+      </a>
+      {% endif %}
+    </div>
+  </article>
+</div>
