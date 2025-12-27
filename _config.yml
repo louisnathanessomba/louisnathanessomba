@@ -1,14 +1,14 @@
 # ===== SITE SETTINGS =====
 title: "Louis Nathan Essomba"
 description: "Interdisciplinary research, projects, and reflections by Louis Nathan Essomba. Bridging science, ethics, and technology for a sustainable future."
-url: "https://louisnathanessomba.github.io"  # Replace with your GitHub Pages URL
-baseurl: "/louis-nathan-essomba"  # Leave empty for GitHub Pages
+url: "https://louisnathanessomba.github.io"  # Your GitHub Pages URL
+baseurl: "/louis-nathan-essomba"  # Your repository name (subdirectory)
 
 # ===== AUTHOR & SOCIAL =====
 author:
   name: "Louis Nathan Essomba"
   email: "your-email@example.com"
-  github: "yourusername"
+  github: "louisnathanessomba"
   linkedin: "yourprofile"
   twitter: "yourhandle"  # Optional
 
@@ -21,8 +21,6 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
-    span:
-      line_numbers: false
 
 # ===== COLLECTIONS =====
 collections:
@@ -70,14 +68,12 @@ defaults:
       type: "foundations"
     values:
       layout: "thesis"
-      accent_color: "#6c5ce7"  # Purple
 
   # Applied Works (Projects)
   - scope:
       path: "Applied-Works/*/index.md"
     values:
       layout: "project"
-      accent_color: "#fd79a8"  # Pink
 
   # Exploring Frontiers (Research)
   - scope:
@@ -85,7 +81,6 @@ defaults:
       type: "exploring_frontiers"
     values:
       layout: "research"
-      accent_color: "#00b894"  # Green
 
   # Ethics & Ecology
   - scope:
@@ -93,23 +88,18 @@ defaults:
       type: "ethics_ecology"
     values:
       layout: "essay"
-      accent_color: "#fdcb6e"  # Yellow
 
   # Everyday Insights (Student-Life-Tips)
   - scope:
       path: "Everyday-Insights/Student-Life-Tips/_posts/*"
     values:
       layout: "tip"
-      accent_color: "#e17055"  # Orange
-      category: "student-life"
 
   # Everyday Insights (Me-Too)
   - scope:
       path: "Everyday-Insights/Me-Too/_posts/*"
     values:
       layout: "opinion"
-      accent_color: "#e17055"  # Orange
-      category: "me-too"
 
   # Companies-Threads
   - scope:
@@ -117,49 +107,35 @@ defaults:
       type: "companies_threads"
     values:
       layout: "research"
-      accent_color: "#e91e63"  # Pink
-      category: "companies-threads"
 
   # Independently-Search Subsections
   - scope:
       path: "Exploring-Frontiers/Independently-Search/mathematics/_posts/*"
     values:
       layout: "research"
-      accent_color: "#00bcd4"  # Cyan
-      category: "mathematics"
-
   - scope:
       path: "Exploring-Frontiers/Independently-Search/physics/_posts/*"
     values:
       layout: "research"
-      accent_color: "#ff5722"  # Deep Orange
-      category: "physics"
-
   - scope:
       path: "Exploring-Frontiers/Independently-Search/chemistry/_posts/*"
     values:
       layout: "research"
-      accent_color: "#4caf50"  # Green
-      category: "chemistry"
-
   - scope:
       path: "Exploring-Frontiers/Independently-Search/computer-science/_posts/*"
     values:
       layout: "research"
-      accent_color: "#64b5f6"  # Blue
-      category: "computer-science"
-
   - scope:
       path: "Exploring-Frontiers/Independently-Search/philosophy/_posts/*"
     values:
       layout: "research"
-      accent_color: "#a1887f"  # Brown
-      category: "philosophy"
 
 # ===== PLUGINS =====
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
 
 # ===== PAGINATION =====
 paginate: 10
@@ -177,90 +153,7 @@ exclude:
   - LICENSE
   - .gitignore
   - .github/
-  - assets/css/_sass/  # Exclude SASS partials
-
-# ===== CUSTOM VARIABLES =====
-# Accent colors for sections (matches CSS)
-accent_colors:
-  foundations: "#6c5ce7"      # Purple
-  applied_works: "#fd79a8"    # Pink
-  exploring: "#00b894"        # Green
-  ethics: "#fdcb6e"           # Yellow
-  everyday: "#e17055"         # Orange
-  about: "#0984e3"             # Blue
-  math: "#00bcd4"              # Cyan
-  physics: "#ff5722"           # Deep Orange
-  chemistry: "#4caf50"        # Green
-  cs: "#64b5f6"                # Blue
-  philosophy: "#a1887f"       # Brown
-  companies: "#e91e63"         # Pink
-
-# ===== FRONT MATTER DEFAULTS =====
-front_matter_defaults:
-  # Foundations
-  - scope:
-      path: "Foundations/_posts/*"
-    values:
-      layout: "thesis"
-      category: "foundations"
-
-  # Applied Works
-  - scope:
-      path: "Applied-Works/*/index.md"
-    values:
-      layout: "project"
-
-  # Exploring Frontiers (Independently-Search)
-  - scope:
-      path: "Exploring-Frontiers/Independently-Search/mathematics/_posts/*"
-    values:
-      layout: "research"
-      category: "mathematics"
-
-  - scope:
-      path: "Exploring-Frontiers/Independently-Search/physics/_posts/*"
-    values:
-      layout: "research"
-      category: "physics"
-
-  - scope:
-      path: "Exploring-Frontiers/Independently-Search/chemistry/_posts/*"
-    values:
-      layout: "research"
-      category: "chemistry"
-
-  - scope:
-      path: "Exploring-Frontiers/Independently-Search/computer-science/_posts/*"
-    values:
-      layout: "research"
-      category: "computer-science"
-
-  - scope:
-      path: "Exploring-Frontiers/Independently-Search/philosophy/_posts/*"
-    values:
-      layout: "research"
-      category: "philosophy"
-
-  # Companies-Threads
-  - scope:
-      path: "Exploring-Frontiers/Companies-Threads/_posts/*"
-    values:
-      layout: "research"
-      category: "companies-threads"
-
-  # Student-Life-Tips
-  - scope:
-      path: "Everyday-Insights/Student-Life-Tips/_posts/*"
-    values:
-      layout: "tip"
-      category: "student-life"
-
-  # Me-Too
-  - scope:
-      path: "Everyday-Insights/Me-Too/_posts/*"
-    values:
-      layout: "opinion"
-      category: "me-too"
+  - assets/css/_sass/
 
 # ===== SEO & SOCIAL SHARING =====
 twitter:
@@ -271,4 +164,4 @@ open_graph:
   locale: "en_US"
 
 # ===== TIME ZONE =====
-timezone: "Africa/Douala"  # Cameroon time zone
+timezone: "Africa/Douala"
